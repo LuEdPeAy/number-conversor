@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if (filter_var($decimal, FILTER_VALIDATE_INT) !== false && $decimal > -1) {
               $conversor = new operaciones;
               $binario = $conversor->convertiraBinario($decimal);
+              $hexadecimal = $conversor->convertiraHexadecimal($decimal);
+              $octal = $conversor->convertiraOctal($decimal);
           } else {
             $alertDanger = '<div class="container">
               <div class="alert alert-danger" role="alert">
@@ -34,13 +36,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decimal a Binario</title>
+    <title>Conversor de Decimal a multiples formatos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./img/icono-Luedpeay.png" type="image/x-icon">
 </head>
 <body>
     <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg mb-4" data-bs-theme="dark">
   <div class="container-fluid bg-dark">
-    <a class="navbar-brand" href="./index.php">Luedpeay</a>
+    <a class="navbar-brand" href="https://github.com/LuEdPeAy">
+      <img src="./img/icono-Luedpeay.png" style="width:50px;" alt="">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -97,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
   </div>
   <div class="card-footer text-body-secondary">
-    Luedpeay
+    <a href="https://github.com/LuEdPeAy">Luedpeay</a>
   </div>
 </div>
 </div>
