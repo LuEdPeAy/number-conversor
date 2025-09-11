@@ -5,6 +5,8 @@ include_once('elementos.php');
 $menu = new elementos;
 $alertDanger = '';
 $decimal;
+$hexadecimal;
+$octal;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica si los datos se han enviado y son POST
     $decimal = htmlspecialchars($_POST['numeroDecimal']); // Limpia los datos para evitar inyecciones
@@ -52,11 +54,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
 <div class="card text-center">
   <div class="card-header">
-    Convertidor Decimal a Binario
+    Convertidor Decimal a Binario, Hexadecimal y Octal
   </div>
   <div class="card-body">
-    <h5 class="card-title">Decimal a Binario</h5>
-    <p class="card-text">Simple convertidor de práctica de números enteros decimales a binario.</p>
+    <h5 class="card-title">Convertir desde decimal</h5>
+    <p class="card-text">Simple convertidor de práctica de números enteros decimales a Binario, Hexadecimal y Octal.</p>
   </div>
   <div class="container">
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -78,6 +80,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="numeroBinario" class="form-label">Binario:</label>
             <input type="text" class="form-control" id="numeroBinario" aria-describedby="binarioHelp" readonly value="<?php echo !empty($binario) ? htmlspecialchars($binario) : ''; ?>">
             <div id="binarioHelp" class="form-text">Número en formato binario.</div>
+          </div>
+          <div class="mb-3">
+            <label for="numeroHexadecimal" class="form-label">Hexadecimal:</label>
+            <input type="text" class="form-control" id="numeroHexadecimal" aria-describedby="hexadecimalHelp" readonly value="<?php echo !empty($hexadecimal) ? htmlspecialchars($hexadecimal) : ''; ?>">
+            <div id="hexadecimalHelp" class="form-text">Número en formato hexadecimal.</div>
+          </div>
+          <div class="mb-3">
+            <label for="numeroOctal" class="form-label">Octal:</label>
+            <input type="text" class="form-control" id="numeroOctal" aria-describedby="octalHelp" readonly value="<?php echo !empty($octal) ? htmlspecialchars($octal) : ''; ?>">
+            <div id="octalHelp" class="form-text">Número en formato octal.</div>
           </div>
         </div>
       </div>
