@@ -3,7 +3,8 @@
 Este es un convertidor educativo y práctico que transforma números enteros decimales en su representación binaria. Desarrollado como parte de una serie de herramientas de aprendizaje numérico. Cuenta con:
 
 - #### Decimal a Binario.
-- #### Decimal a Hexadecimal
+- #### Decimal a Hexadecimal.
+- #### Decimal a Octal.
 
 ## 🚀 Características
 

@@ -59,6 +59,18 @@ class operaciones{
     return $hexadecimal;
 
     }
+
+    public function convertiraOctal(int $decimal){
+        $octal = "";
+
+    do {
+        $octal = ($decimal % 8) . $octal;
+        $decimal = intdiv($decimal, 8);
+    } while ($decimal > 0);
+
+    return $octal;
+
+    }
 }
 
 ?>
