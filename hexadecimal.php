@@ -8,13 +8,13 @@ $decimal;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica si los datos se han enviado y son POST
     $decimal = htmlspecialchars($_POST['numeroDecimal']); // Limpia los datos para evitar inyecciones
-    $binario;
+    $hexadecimal;
     $alertDanger = '';
 
     if (!empty($decimal)) {
       if (filter_var($decimal, FILTER_VALIDATE_INT) !== false && $decimal > -1) {
               $conversor = new operaciones;
-              $binario = $conversor->convertiraBinario($decimal);
+              $hexadecimal = $conversor->convertiraHexadecimal($decimal);
           } else {
             $alertDanger = '<div class="container">
               <div class="alert alert-danger" role="alert">
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <nav class="navbar bg-dark border-bottom border-body navbar-expand-lg mb-4" data-bs-theme="dark">
   <div class="container-fluid bg-dark">
-    <a class="navbar-brand" href="./index.php">Luedpeay</a>
+    <a class="navbar-brand" href="/">Luedpeay</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container">
 <div class="card text-center">
   <div class="card-header">
-    Convertidor Decimal a Binario
+    Convertidor Decimal a Hexadecimal
   </div>
   <div class="card-body">
-    <h5 class="card-title">Decimal a Binario</h5>
-    <p class="card-text">Simple convertidor de práctica de números enteros decimales a binario.</p>
+    <h5 class="card-title">Decimal a Hexadecimal</h5>
+    <p class="card-text">Simple convertidor de práctica de números enteros decimales a Hexadecimal.</p>
   </div>
   <div class="container">
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -75,9 +75,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="col border-start">
           <div class="mb-3">
-            <label for="numeroBinario" class="form-label">Binario:</label>
-            <input type="text" class="form-control" id="numeroBinario" aria-describedby="binarioHelp" readonly value="<?php echo !empty($binario) ? htmlspecialchars($binario) : ''; ?>">
-            <div id="binarioHelp" class="form-text">Número en formato binario.</div>
+            <label for="numeroHexadecimal" class="form-label">Hexadecimal:</label>
+            <input type="text" class="form-control" id="numeroHexadecimal" aria-describedby="HexadecimalHelp" readonly value="<?php echo !empty($hexadecimal) ? htmlspecialchars($hexadecimal) : ''; ?>">
+            <div id="HexadecimalHelp" class="form-text">Número en formato Hexadecimal.</div>
           </div>
         </div>
       </div>
