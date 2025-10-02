@@ -21,6 +21,8 @@ La interfaz incluye:
 - Botón "Convertir"
 - Mensajes de alerta si la entrada no es válida
 
+  <img width="1906" height="946" alt="image" src="https://github.com/user-attachments/assets/ba917c5a-d31e-4937-a643-784fc70d42ca" />
+
 ## 🛠️ Tecnologías utilizadas
 
 - HTML5
